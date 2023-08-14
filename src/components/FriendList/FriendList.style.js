@@ -21,9 +21,9 @@ export const Icon = styled.span`
   margin-left: 10px;
   color: ${props => {
     switch (props.ofen) {
-      case true:
+      case 'true':
         return 'green';
-      case false:
+      case 'false':
         return 'red';
     }
   }};
