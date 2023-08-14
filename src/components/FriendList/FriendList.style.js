@@ -20,11 +20,13 @@ export const Icon = styled.span`
   align-items: center;
   margin-left: 10px;
   color: ${props => {
-    switch (props.ofen) {
+    switch (props.$ofen) {
       case 'true':
         return 'green';
       case 'false':
         return 'red';
+      default:
+        return 'yellow';
     }
   }};
 `;

@@ -21,7 +21,7 @@ export const Item = styled.li`
   flex-direction: column;
   gap: 10px;
   background-color: ${props => {
-    switch (props.item) {
+    switch (props.$item) {
       case 22:
         return 'green';
       case 17:
@@ -32,6 +32,8 @@ export const Item = styled.li`
         return 'blue';
       case 10:
         return 'red';
+      default:
+        return 'yellow';
     }
   }};
   padding: 10px;

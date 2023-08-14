@@ -7,7 +7,7 @@ const FriendList = ({ friend }) => {
       <List>
         {friend.map(({ id, avatar, name, isOnline }) => (
           <Item key={id}>
-            <Icon ofen={isOnline}>
+            <Icon $ofen={isOnline}>
               <BsFillCircleFill />
             </Icon>
             <Avatar src={avatar} alt={name} />

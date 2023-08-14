@@ -7,7 +7,7 @@ const Statistics = ({ items }) => {
 
       <StatsList>
         {items.map(({ id, label, percentage }) => (
-          <Item key={id} item={percentage}>
+          <Item key={id} $item={percentage}>
             <span className="label">{label}</span>
             <span className="percentage">{percentage}</span>
           </Item>
