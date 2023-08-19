@@ -1,12 +1,11 @@
 import propTypes from 'prop-types';
 import { Section, Title, StatsList, Item } from './Statistics.styled.js';
-const Statistics = ({ items }) => {
+const Statistics = ({ stats, title }) => {
   return (
     <Section>
-      <Title>Upload stats</Title>
-
+      {title && <Title>{title}</Title>}
       <StatsList>
-        {items.map(({ id, label, percentage }) => (
+        {stats.map(({ id, label, percentage }) => (
           <Item key={id} $item={percentage}>
             <span className="label">{label}</span>
             <span className="percentage">{percentage}</span>
@@ -18,12 +17,13 @@ const Statistics = ({ items }) => {
 };
 
 Statistics.propTypes = {
-  items: propTypes.arrayOf(
+  title: propTypes.string,
+  stats: propTypes.arrayOf(
     propTypes.shape({
       percentage: propTypes.number.isRequired,
       label: propTypes.string.isRequired,
       id: propTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
 export default Statistics;

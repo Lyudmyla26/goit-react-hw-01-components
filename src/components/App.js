@@ -1,11 +1,10 @@
 import Profile from './Profile/Profile.js';
 import Statistics from './Statistics/Statistics.js';
-import Stats from './Profile/stats.js';
-import user from './user.json';
-import data from './data.json';
-import friends from './friends.json';
+import user from '../data/user.json';
+import data from '../data/data.json';
+import friends from '../data/friends.json';
 import FriendList from './FriendList/FriendList.js';
-import transaction from './transactions.json';
+import transaction from '../data/transactions.json';
 import TransactionHistory from './Transaction/TransactionHistory.js';
 import { Container, Page } from './App.styles.js';
 import { GlobalStyle } from './Global.styled.js';
@@ -14,19 +13,15 @@ export const App = () => {
     <Page>
       <Container className="profil">
         <Profile
-          name={user.username}
-          email={user.tag}
-          city={user.location}
-          link={user.avatar}
-        />
-        <Stats
-          likes={user.stats.likes}
-          views={user.stats.views}
-          followers={user.stats.followers}
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
         />
       </Container>
 
-      <Statistics items={data} />
+      <Statistics stats={data} title="Upload stats" />
       <FriendList friend={friends} />
       <TransactionHistory arry={transaction} />
       <GlobalStyle />
